@@ -10,6 +10,7 @@ import { deleteFaq, editFaq, getFaq, getFaqById, saveFaq } from "../controllers/
 import { deleteProgram, editProgram, getProgram, getProgramById, saveProgram } from "../controllers/programController.js";
 import { deletePengaduan, editPengaduan, getPengaduan, getPengaduanById, savePengaduan } from "../controllers/pengaduanController.js";
 import { deleteKomentar, editKomentar, getKomentar, getKomentarById, saveKomentar } from "../controllers/komentarController.js";
+import { addAdmin, deleteAdmin, getAdmin } from "../controllers/adminController.js";
 
 const router = express.Router();
 
@@ -42,5 +43,10 @@ router.get('/komentar/:id', getKomentarById);
 router.post('/komentar', saveKomentar);
 router.patch('/komentar/:id', editKomentar);
 router.delete('/komentar/:id', deleteKomentar);
+
+
+router.get('/admin', getAdmin);
+router.post('/admin', addAdmin);
+router.delete('/admin/:id', deleteAdmin);
 
 export default router;
